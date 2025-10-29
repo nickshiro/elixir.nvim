@@ -32,8 +32,10 @@ local groups = {
 
 local highlights = {
 	["Keyword"] = { fg = colors.violet },
+    ["Special"] = { fg = colors.violet},
 
 	["Function"] = { fg = colors.blue },
+    ["@function.builtin"] = { fg = colors.blue },
 	["@constructor"] = { fg = colors.blue },
 
 	["Type"] = { fg = colors.purple },
@@ -50,7 +52,6 @@ local highlights = {
 	["@variable.builtin"] = { fg = colors.white },
 	["Identifier"] = { fg = colors.white },
 	["Constant"] = { fg = colors.white },
-	["@constant.builtin"] = { fg = colors.white },
 
 	["Punctuation"] = { fg = colors.white },
 	["@punctuation.special"] = { fg = colors.white },
@@ -70,7 +71,7 @@ local highlights = {
 	["Pmenu"] = { bg = groups.background.secondary },
 	["PmenuSel"] = { bg = "#2F334D", fg = colors.purple },
 	["PmenuMatch"] = { bg = "#2E3B54" },
-	["PmenuThumb"] = { bg = "#2D3546" }, 
+	["PmenuThumb"] = { bg = "#2D3546" },
 
 	["Error"] = { fg = colors.red },
 	["Ok"] = { fg = colors.green },

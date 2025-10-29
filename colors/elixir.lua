@@ -1,2 +1,2 @@
-package.loaded["elixir"] = nil
+-- package.loaded["elixir"] = nil
 require("elixir").colorscheme()

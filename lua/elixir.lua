@@ -1,19 +1,151 @@
 local M = {}
 
-local colors = {}
+local colors = {
+	white = "#DDDFE7",
+	violet = "#C099FF",
+	purple = "#EE91E5",
+	yellow = "#FFE480",
+	green = "#3CEC85",
+	red = "#ED4F73",
+	blue = "#84AAFD",
+	light_gray = "#9095A3",
+	gray = "#5E6578",
+	dark_gray = "#253043",
+}
 
 local groups = {
 	background = {
-		primary = "#20192B",
+		primary = "#222436",
+		secondary = "#1E2030",
+	},
+	git = {
+		add = colors.green,
+		delete = colors.red,
+		ignore = colors.gray,
+		merge = colors.yellow,
+		modified = colors.purple,
+		untracked = colors.violet,
+		rename = colors.violet,
+		unstaged = colors.yellow,
 	},
 }
 
 local highlights = {
-	["Normal"] = groups.background.primary,
+	["Keyword"] = { fg = colors.violet },
+
+	["Function"] = { fg = colors.blue },
+	["@constructor"] = { fg = colors.blue },
+
+	["Type"] = { fg = colors.purple },
+	["@type.builtin"] = { fg = colors.purple },
+
+	["Comment"] = { fg = colors.gray },
+	["@comment.documentation"] = { fg = colors.light_gray },
+
+	["String"] = { fg = colors.yellow },
+	["@string.special"] = { fg = colors.yellow },
+	["@character.special"] = { fg = colors.yellow },
+
+	["Variable"] = { fg = colors.white },
+	["@variable.builtin"] = { fg = colors.white },
+	["Identifier"] = { fg = colors.white },
+	["Constant"] = { fg = colors.white },
+	["@constant.builtin"] = { fg = colors.white },
+
+	["Punctuation"] = { fg = colors.white },
+	["@punctuation.special"] = { fg = colors.white },
+
+	["Normal"] = { bg = groups.background.primary, fg = colors.white },
+	["NormalFloat"] = { bg = groups.background.secondary },
+	["Visual"] = { bg = "#2F334D" },
+	["Search"] = { bg = colors.violet, fg = colors.white },
+
+	["CursorLine"] = { bg = "#2F334D" },
+	["CursorColumn"] = { bg = "#2F334D" },
+	["LineNr"] = { fg = colors.gray },
+	["CursorLineNr"] = { fg = colors.purple },
+
+	["Directory"] = { fg = colors.violet },
+
+	["Pmenu"] = { bg = groups.background.secondary },
+	["PmenuSel"] = { bg = "#2F334D", fg = colors.purple },
+	["PmenuMatch"] = { bg = "#2E3B54" },
+	["PmenuThumb"] = { bg = "#2D3546" }, 
+
+	["Error"] = { fg = colors.red },
+	["Ok"] = { fg = colors.green },
+	["WarningMsg"] = { fg = colors.yellow },
+	["ErrorMsg"] = { fg = colors.red },
+	["MoreMsg"] = { bg = colors.gray },
+	["ModeMsg"] = { fg = colors.violet },
+	["PreInsert"] = { fg = colors.green },
+	["Question"] = { fg = colors.blue },
+	["QuickFixLine"] = { fg = colors.blue },
+
+	["WinSeparator"] = { fg = colors.dark_gray },
+	["StatusLine"] = { bg = "#1E2030", fg = colors.light_gray },
+
+	["SpellBad"] = { sp = colors.red, undercurl = true },
+	["SpellCap"] = { sp = colors.yellow, undercurl = true },
+	["SpellLocal"] = { sp = colors.green, undercurl = true },
+	["SpellRare"] = { sp = colors.blue, undercurl = true },
+
+	["DiagnosticError"] = { fg = colors.red },
+	["DiagnosticUnderlineError"] = { sp = colors.red, undercurl = true },
+	["DiagnosticWarn"] = { fg = colors.yellow },
+	["DiagnosticUnderlineWarn"] = { sp = colors.yellow, undercurl = true },
+	["DiagnosticInfo"] = { fg = colors.blue },
+	["DiagnosticUnderlineInfo"] = { sp = colors.blue, undercurl = true },
+	["DiagnosticHint"] = { fg = colors.blue },
+	["DiagnosticUnderlineHint"] = { sp = colors.blue, undercurl = true },
+	["DiagnosticOk"] = { fg = colors.green },
+	["DiagnosticUnderlineOk"] = { sp = colors.green, undercurl = true },
+	["DiagnosticDefaultError"] = { link = "DiagnosticError" },
+	["DiagnosticDefaultWarn"] = { link = "DiagnosticWarn" },
+	["DiagnosticDefaultInfo"] = { link = "DiagnosticInfo" },
+	["DiagnosticDefaultHint"] = { link = "DiagnosticHint" },
+	["DiagnosticDefaultOk"] = { link = "DiagnosticOk" },
+	["DiagnosticFloatingError"] = { link = "DiagnosticError" },
+	["DiagnosticFloatingWarn"] = { link = "DiagnosticWarn" },
+	["DiagnosticFloatingInfo"] = { link = "DiagnosticInfo" },
+	["DiagnosticFloatingHint"] = { link = "DiagnosticHint" },
+	["DiagnosticFloatingOk"] = { link = "DiagnosticOk" },
+	["DiagnosticSignError"] = { link = "DiagnosticError" },
+	["DiagnosticSignWarn"] = { link = "DiagnosticWarn" },
+	["DiagnosticSignInfo"] = { link = "DiagnosticInfo" },
+	["DiagnosticSignHint"] = { link = "DiagnosticHint" },
+	["DiagnosticSignOk"] = { link = "DiagnosticOk" },
+
+	-- hrsh7th/nvim-cmp
+	["CmpItemMenu"] = { fg = colors.white },
+	["CmpItemKind"] = { fg = colors.white },
+
+	-- lukas-reineke/indent-blankline.nvim
+	["IblIndent"] = { fg = colors.dark_gray },
+	["IblScope"] = { fg = colors.gray },
+
+	-- nvim-neo-tree/neo-tree.nvim
+	["NeoTreeFileIcon"] = { fg = colors.gray },
+	["NeoTreeFileName"] = { fg = colors.white },
+	["NeoTreeDirectoryIcon"] = { fg = colors.light_gray },
+	["NeoTreeDirectoryName"] = { fg = colors.white },
+	["NeoTreeGitAdded"] = { fg = groups.git.add },
+	["NeoTreeGitConflict"] = { fg = groups.git.merge },
+	["NeoTreeGitDeleted"] = { fg = groups.git.delete },
+	["NeoTreeGitIgnored"] = { fg = groups.git.ignore },
+	["NeoTreeGitModified"] = { fg = groups.git.modified },
+	["NeoTreeGitRenamed"] = { fg = groups.git.rename },
+	["NeoTreeGitUntracked"] = { fg = groups.git.untracked },
+	["NeoTreeGitUnstaged"] = { fg = groups.git.unstaged },
+	["NeoTreeTabSeparatorActive"] = { link = "WinSeparator" },
+	["NeoTreeTabSeparatorInactive"] = { link = "WinSeparator" },
+	["NeoTreeTitleBar"] = { link = "StatusLineTerm" },
+	["NeoTreeNormal"] = { bg = groups.background.secondary },
+	["NeoTreeNormalNC"] = { bg = groups.background.secondary },
 }
 
 function M.colorscheme()
-	vim.g.colors_name = "arc"
+	vim.g.colors_name = "elixir"
 	vim.cmd.highlight("clear")
 	if vim.fn.has("syntax_on") then
 		vim.cmd.syntax("reset")

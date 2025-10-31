@@ -63,7 +63,7 @@ local highlights = {
 	["Search"] = { bg = colors.violet, fg = colors.white },
 
 	["CursorLine"] = { bg = "#343351" },
-	["CursorColumn"] = { bg = "#2F334D" },
+	["CursorColumn"] = { bg = "#343351" },
 	["LineNr"] = { fg = colors.gray },
 	["CursorLineNr"] = { fg = colors.purple },
 

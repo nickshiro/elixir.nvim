@@ -2,21 +2,21 @@ local M = {}
 
 local colors = {
 	white = "#DDDFE7",
-	violet = "#C099FF",
+	violet = "#8C6EF2",
 	purple = "#EE91E5",
-	yellow = "#FFE480",
+	yellow = "#F3D954",
 	green = "#3CEC85",
 	red = "#ED4F73",
-	blue = "#84AAFD",
-	light_gray = "#9095A3",
-	gray = "#5E6578",
-	dark_gray = "#253043",
+	blue = "#82AAFF",
+	light_gray = "#8E93A1",
+	gray = "#4B4E62",
+	dark_gray = "#282436",
 }
 
 local groups = {
 	background = {
-		primary = "#222436",
-		secondary = "#1E2030",
+		primary = "#20192B",
+		secondary = "#1E1828",
 	},
 	git = {
 		add = colors.green,
@@ -32,11 +32,12 @@ local groups = {
 
 local highlights = {
 	["Keyword"] = { fg = colors.violet },
-    ["Special"] = { fg = colors.violet},
+	["Special"] = { fg = colors.violet },
 
 	["Function"] = { fg = colors.blue },
-    ["@function.builtin"] = { fg = colors.blue },
+	["@function.builtin"] = { fg = colors.blue },
 	["@constructor"] = { fg = colors.blue },
+    ["@constructor.lua"] = { fg = colors.white },
 
 	["Type"] = { fg = colors.purple },
 	["@type.builtin"] = { fg = colors.purple },
@@ -58,10 +59,10 @@ local highlights = {
 
 	["Normal"] = { bg = groups.background.primary, fg = colors.white },
 	["NormalFloat"] = { bg = groups.background.secondary },
-	["Visual"] = { bg = "#2F334D" },
+	["Visual"] = { bg = "#343351" },
 	["Search"] = { bg = colors.violet, fg = colors.white },
 
-	["CursorLine"] = { bg = "#2F334D" },
+	["CursorLine"] = { bg = "#343351" },
 	["CursorColumn"] = { bg = "#2F334D" },
 	["LineNr"] = { fg = colors.gray },
 	["CursorLineNr"] = { fg = colors.purple },
@@ -83,8 +84,9 @@ local highlights = {
 	["Question"] = { fg = colors.blue },
 	["QuickFixLine"] = { fg = colors.blue },
 
-	["WinSeparator"] = { fg = colors.dark_gray },
-	["StatusLine"] = { bg = "#1E2030", fg = colors.light_gray },
+	["WinSeparator"] = { fg = "#140E1F" },
+	["StatusLine"] = { bg = "#1D1727", fg = colors.light_gray },
+    ["StatusLineNc"] = { bg = "#1D1727", fg = colors.light_gray },
 
 	["SpellBad"] = { sp = colors.red, undercurl = true },
 	["SpellCap"] = { sp = colors.yellow, undercurl = true },

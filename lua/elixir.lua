@@ -38,6 +38,7 @@ local highlights = {
 	["@function.builtin"] = { fg = colors.blue },
 	["@constructor"] = { fg = colors.blue },
     ["@constructor.lua"] = { fg = colors.white },
+    ["@lsp.type.builtin"] = { fg = colors.blue },
 
 	["Type"] = { fg = colors.purple },
 	["@type.builtin"] = { fg = colors.purple },

@@ -8,8 +8,8 @@ local colors = {
 	green = "#3CEC85",
 	red = "#ED4F73",
 	blue = "#82AAFF",
-	light_gray = "#8E93A1",
-	gray = "#4B4E62",
+	light_gray = "#AAA0A9",
+	gray = "#585270",
 	dark_gray = "#282436",
 }
 
@@ -37,8 +37,8 @@ local highlights = {
 	["Function"] = { fg = colors.blue },
 	["@function.builtin"] = { fg = colors.blue },
 	["@constructor"] = { fg = colors.blue },
-    ["@constructor.lua"] = { fg = colors.white },
-    ["@lsp.type.builtin"] = { fg = colors.blue },
+	["@constructor.lua"] = { fg = colors.white },
+	["@lsp.type.builtin"] = { fg = colors.blue },
 
 	["Type"] = { fg = colors.purple },
 	["@type.builtin"] = { fg = colors.purple },
@@ -60,18 +60,18 @@ local highlights = {
 
 	["Normal"] = { bg = groups.background.primary, fg = colors.white },
 	["NormalFloat"] = { bg = groups.background.secondary },
-	["Visual"] = { bg = "#343351" },
+	["Visual"] = { bg = "#372b4a" },
 	["Search"] = { bg = colors.violet, fg = colors.white },
 
-	["CursorLine"] = { bg = "#343351" },
-	["CursorColumn"] = { bg = "#343351" },
+	["CursorLine"] = { bg = "#372b4a" },
+	["CursorColumn"] = { bg = "#372b4a" },
 	["LineNr"] = { fg = colors.gray },
 	["CursorLineNr"] = { fg = colors.purple },
 
 	["Directory"] = { fg = colors.violet },
 
 	["Pmenu"] = { bg = groups.background.secondary },
-	["PmenuSel"] = { bg = "#2F334D", fg = colors.purple },
+	["PmenuSel"] = { bg = "#372b4a", fg = colors.purple },
 	["PmenuMatch"] = { bg = "#2E3B54" },
 	["PmenuThumb"] = { bg = "#2D3546" },
 
@@ -87,7 +87,7 @@ local highlights = {
 
 	["WinSeparator"] = { fg = "#140E1F" },
 	["StatusLine"] = { bg = "#1D1727", fg = colors.light_gray },
-    ["StatusLineNc"] = { bg = "#1D1727", fg = colors.light_gray },
+	["StatusLineNc"] = { bg = "#1D1727", fg = colors.light_gray },
 
 	["SpellBad"] = { sp = colors.red, undercurl = true },
 	["SpellCap"] = { sp = colors.yellow, undercurl = true },

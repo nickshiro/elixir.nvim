@@ -58,7 +58,7 @@ local highlights = {
 	["Punctuation"] = { fg = colors.white },
 	["@punctuation.special"] = { fg = colors.white },
 
-    ["@tag"] = { fg = colors.purple },
+    ["@tag"] = { fg = colors.violet },
     ["@tag.attribute"] = { fg = colors.white },
 
 	["Normal"] = { bg = groups.background.primary, fg = colors.white },

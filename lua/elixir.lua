@@ -2,15 +2,15 @@ local M = {}
 
 local colors = {
 	white = "#DDDFE7",
-	violet = "#8C6EF2",
+	violet = "#A78BFA",
 	purple = "#EE91E5",
-	yellow = "#F3D954",
+	yellow = "#FCD34D",
 	green = "#3CEC85",
 	red = "#ED4F73",
 	blue = "#82AAFF",
-	light_gray = "#AAA0A9",
-	gray = "#585270",
-	dark_gray = "#282436",
+	light_gray = "#A8A0C1",
+	gray = "#6B578A",
+	dark_gray = "#2A1F3D",
 }
 
 local groups = {

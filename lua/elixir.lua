@@ -63,11 +63,11 @@ local highlights = {
 
 	["Normal"] = { bg = groups.background.primary, fg = colors.white },
 	["NormalFloat"] = { bg = groups.background.secondary },
-	["Visual"] = { bg = "#372b4a" },
+	["Visual"] = { bg = "#2D233C" },
 	["Search"] = { bg = colors.violet, fg = colors.white },
 
-	["CursorLine"] = { bg = "#372b4a" },
-	["CursorColumn"] = { bg = "#372b4a" },
+	["CursorLine"] = { bg = "#2D233C" },
+	["CursorColumn"] = { bg = "#2D233C" },
 	["LineNr"] = { fg = colors.gray },
 	["CursorLineNr"] = { fg = colors.purple },
 

@@ -54,6 +54,7 @@ local highlights = {
 	["@variable.builtin"] = { fg = colors.white },
 	["Identifier"] = { fg = colors.white },
 	["Constant"] = { fg = colors.white },
+    ["@constant.builtin"] = { fg = colors.white },
 
 	["Punctuation"] = { fg = colors.white },
 	["@punctuation.special"] = { fg = colors.white },

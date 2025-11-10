@@ -1,22 +1,23 @@
 local M = {}
 
 local colors = {
-	white = "#DDDFE7",
-	violet = "#A78BFA",
-	purple = "#EE91E5",
-	yellow = "#FCD34D",
-	green = "#3CEC85",
-	red = "#ED4F73",
-	blue = "#82AAFF",
-	light_gray = "#A8A0C1",
-	gray = "#6B578A",
-	dark_gray = "#2A1F3D",
+	white = "#EAEAEA",
+	violet = "#987EE8",
+	purple = "#E889DF",
+	yellow = "#F6CE4E",
+	green = "#3AE480",
+	red = "#EE6D85",
+	blue = "#7199EE",
+	light_gray = "#947691",
+	gray = "#6E576B",
+	dark_gray = "#493947",
 }
 
 local groups = {
 	background = {
-		primary = "#20192B",
-		secondary = "#1E1828",
+		primary = "#161722",
+		secondary = "#11121D",
+		tertiary = "#0C0D18",
 	},
 	git = {
 		add = colors.green,
@@ -31,6 +32,8 @@ local groups = {
 }
 
 local highlights = {
+	["@lsp"] = { fg = colors.white },
+
 	["Keyword"] = { fg = colors.violet },
 	["Special"] = { fg = colors.violet },
 
@@ -44,40 +47,40 @@ local highlights = {
 	["@type.builtin"] = { fg = colors.purple },
 
 	["Comment"] = { fg = colors.gray },
-	["@comment.documentation"] = { fg = colors.light_gray },
 
 	["String"] = { fg = colors.yellow },
-	["@string.special"] = { fg = colors.yellow },
 	["@character.special"] = { fg = colors.yellow },
+	["@string.special"] = { fg = colors.white },
 
 	["Variable"] = { fg = colors.white },
-	["@variable.builtin"] = { fg = colors.white },
+	["@variable"] = { fg = colors.white },
 	["Identifier"] = { fg = colors.white },
 	["Constant"] = { fg = colors.white },
-    ["@constant.builtin"] = { fg = colors.white },
+	["@constant.builtin"] = { fg = colors.white },
 
 	["Punctuation"] = { fg = colors.white },
+    ["Delimiter"] = { fg = colors.white },
 	["@punctuation.special"] = { fg = colors.white },
 
-    ["@tag"] = { fg = colors.violet },
-    ["@tag.attribute"] = { fg = colors.white },
+	["@tag"] = { fg = colors.violet },
+	["@tag.attribute"] = { fg = colors.white },
 
 	["Normal"] = { bg = groups.background.primary, fg = colors.white },
 	["NormalFloat"] = { bg = groups.background.secondary },
-	["Visual"] = { bg = "#2D233C" },
+	["Visual"] = { bg = "#2F2338" },
 	["Search"] = { bg = colors.violet, fg = colors.white },
 
-	["CursorLine"] = { bg = "#2D233C" },
-	["CursorColumn"] = { bg = "#2D233C" },
+	["CursorLine"] = { bg = "#2F2338" },
+	["CursorColumn"] = { bg = "#2F2338" },
 	["LineNr"] = { fg = colors.gray },
 	["CursorLineNr"] = { fg = colors.purple },
 
 	["Directory"] = { fg = colors.violet },
 
-	["Pmenu"] = { bg = groups.background.secondary },
-	["PmenuSel"] = { bg = "#372b4a", fg = colors.purple },
-	["PmenuMatch"] = { bg = "#2E3B54" },
-	["PmenuThumb"] = { bg = "#2D3546" },
+	["Pmenu"] = { bg = groups.background.secondary, fg = colors.light_gray },
+	["PmenuSel"] = { bg = "#2F2338", fg = colors.purple },
+	["PmenuMatch"] = { fg = colors.purple },
+	["PmenuThumb"] = { bg = "#2F2338" },
 
 	["Error"] = { fg = colors.red },
 	["Ok"] = { fg = colors.green },
@@ -89,9 +92,10 @@ local highlights = {
 	["Question"] = { fg = colors.blue },
 	["QuickFixLine"] = { fg = colors.blue },
 
-	["WinSeparator"] = { fg = "#140E1F" },
-	["StatusLine"] = { bg = "#1D1727", fg = colors.light_gray },
-	["StatusLineNc"] = { bg = "#1D1727", fg = colors.light_gray },
+	["WinSeparator"] = { fg = groups.background.secondary },
+
+	["StatusLine"] = { bg = groups.background.tertiary, fg = colors.light_gray },
+	["StatusLineNc"] = { bg = groups.background.tertiary, fg = colors.light_gray },
 
 	["SpellBad"] = { sp = colors.red, undercurl = true },
 	["SpellCap"] = { sp = colors.yellow, undercurl = true },
@@ -127,6 +131,8 @@ local highlights = {
 	-- hrsh7th/nvim-cmp
 	["CmpItemMenu"] = { fg = colors.white },
 	["CmpItemKind"] = { fg = colors.white },
+	["CmpItemAbbr"] = { fg = colors.light_gray },
+	["CmpItemAbbrMatch"] = { fg = colors.purple },
 
 	-- lukas-reineke/indent-blankline.nvim
 	["IblIndent"] = { fg = colors.dark_gray },
